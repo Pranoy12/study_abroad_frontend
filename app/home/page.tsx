@@ -5,6 +5,7 @@ import InputField from "@/components/InputField";
 import Dropdown from "@/components/Dropdown";
 import { callAI } from "@/utils/api";
 import { useRouter } from "next/navigation";
+import { logout } from "@/app/login/actions";
 
 const Home = () => {
   const router = useRouter();
@@ -30,6 +31,9 @@ const Home = () => {
 
   return (
     <>
+      <div>
+        <button onClick={() => logout()}>Logout</button>
+      </div>
       <form onSubmit={handleSubmit}>
         <div className="grid gap-6 mb-6 md:grid-cols-2">
           <InputField
